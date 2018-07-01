@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38271D20E9751B00E14FEE /* BeaconManager.swift */; };
 		5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80254020CA8C4200D3C16F /* AppDelegate.swift */; };
 		5A80254320CA8C4300D3C16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80254220CA8C4300D3C16F /* ViewController.swift */; };
 		5A80254620CA8C4300D3C16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A80254420CA8C4300D3C16F /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A38271D20E9751B00E14FEE /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		5A80253D20CA8C4200D3C16F /* BluetoothProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A80254020CA8C4200D3C16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A80254220CA8C4300D3C16F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A38271C20E9750200E14FEE /* Beacons */ = {
+			isa = PBXGroup;
+			children = (
+				5A38271D20E9751B00E14FEE /* BeaconManager.swift */,
+			);
+			path = Beacons;
+			sourceTree = "<group>";
+		};
 		5A80253420CA8C4200D3C16F = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 			children = (
 				5A80254020CA8C4200D3C16F /* AppDelegate.swift */,
 				5A80258320CAC59C00D3C16F /* ObjCBridge.h */,
+				5A38271C20E9750200E14FEE /* Beacons */,
 				5A80257C20CAAC2600D3C16F /* Algorithms */,
 				5A80254220CA8C4300D3C16F /* ViewController.swift */,
 				5A80254420CA8C4300D3C16F /* Main.storyboard */,
@@ -278,6 +289,7 @@
 				5A80257E20CAAC7300D3C16F /* RSSIToDistance.swift in Sources */,
 				5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */,
 				5A80257220CA966000D3C16F /* KalmanFilter.swift in Sources */,
+				5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */,
 				5A80257420CA966000D3C16F /* KalmanFilterType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
