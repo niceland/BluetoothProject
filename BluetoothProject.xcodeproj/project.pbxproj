@@ -110,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5A80254020CA8C4200D3C16F /* AppDelegate.swift */,
+				5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */,
 				5A80258320CAC59C00D3C16F /* ObjCBridge.h */,
 				5A38271C20E9750200E14FEE /* Beacons */,
 				5A80257C20CAAC2600D3C16F /* Algorithms */,
@@ -118,7 +119,6 @@
 				5A80254720CA8C4500D3C16F /* Assets.xcassets */,
 				5A80254920CA8C4500D3C16F /* LaunchScreen.storyboard */,
 				5A80254C20CA8C4500D3C16F /* Info.plist */,
-				5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */,
 			);
 			path = BluetoothProject;
 			sourceTree = "<group>";

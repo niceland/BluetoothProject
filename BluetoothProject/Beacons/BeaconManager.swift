@@ -12,6 +12,9 @@ import CoreLocation
 class BeaconManager: NSObject, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
+    var enterHandler: (((Int?, Int?)) -> Void)?
+    var exitHandler: (((Int?, Int?)) -> Void)?
+    
     
     override init() {
         super.init()
@@ -35,6 +38,23 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
         }
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        
+        let beaconRegion = CLBeaconRegion()
+        
+        if let handler = enterHandler {
+            handler((beaconRegion.major?.intValue, beaconRegion.minor?.intValue))
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        
+        let beaconRegion = CLBeaconRegion()
+        
+        if let handler = exitHandler {
+            handler((beaconRegion.major?.intValue, beaconRegion.minor?.intValue))
+        }
+        
+    }
 }
-
-
