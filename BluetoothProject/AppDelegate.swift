@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         
         UIApplication.shared.registerUserNotificationSettings(
             UIUserNotificationSettings(types: .alert, categories: nil))
+        
         beaconManager.startSearchingForDeviceWithUUID(uuid: UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!)
         
         return true

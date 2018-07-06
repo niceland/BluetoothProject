@@ -23,6 +23,7 @@
 		5A80257E20CAAC7300D3C16F /* RSSIToDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */; };
 		5A80258020CAC0C300D3C16F /* WeightedLinearAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257F20CAC0C300D3C16F /* WeightedLinearAverage.swift */; };
 		5A80258220CAC55000D3C16F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */; };
+		5A912EB520EF9B5C00E22DAE /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		5A80257F20CAC0C300D3C16F /* WeightedLinearAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedLinearAverage.swift; sourceTree = "<group>"; };
 		5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		5A80258320CAC59C00D3C16F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
+		5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				5A38271D20E9751B00E14FEE /* BeaconManager.swift */,
+				5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */,
 			);
 			path = Beacons;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */,
 				5A80257220CA966000D3C16F /* KalmanFilter.swift in Sources */,
 				5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */,
+				5A912EB520EF9B5C00E22DAE /* BluetoothManager.swift in Sources */,
 				5A80257420CA966000D3C16F /* KalmanFilterType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
