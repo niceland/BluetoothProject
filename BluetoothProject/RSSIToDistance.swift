@@ -12,13 +12,13 @@ import Darwin
 
 class RSSIToDistance {
     
-    func calculateDistance(rssi: Double, txPower: Int) -> Double  {
+    func calculateDistance(rssi: Int, txPower: Int) -> Double  {
         
         if rssi == 0 {
             return -1.0 // if accuracy cannot be determined
         }
         
-        let ratio = rssi * 1.0 / Double(txPower)
+        let ratio = Double(exactly: rssi)! / Double(txPower)
         
         if ratio < 1.0 {
             return pow(ratio, 10)

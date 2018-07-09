@@ -9,11 +9,11 @@
 import Foundation
 import CoreBluetooth
 
-class BluetoothManager: NSObject, CBCentralManagerDelegate {
+class BluetoothManager: NSObject, CBCentralManagerDelegate, MeasurementsDelegate {
     
+    var distance: Double?
     var centralManager: CBCentralManager!
     var estimotePeripheral: CBPeripheral!
-    var rssiValue: NSNumber?
     
     override init() {
         super.init()
@@ -42,7 +42,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print(peripheral)
         estimotePeripheral = peripheral
-        centralManager.stopScan() //to remove?
-        rssiValue = RSSI
+        distance = RSSIToDistance().calculateDistance(rssi:Int(truncating: RSSI), txPower: 1) //change txpower
+        
     }
 }

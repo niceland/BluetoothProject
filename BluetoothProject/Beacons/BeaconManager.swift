@@ -9,11 +9,15 @@
 import UIKit
 import CoreLocation
 
-class BeaconManager: NSObject, CLLocationManagerDelegate {
+class BeaconManager: NSObject, CLLocationManagerDelegate, MeasurementsDelegate {
+    
     
     var locationManager: CLLocationManager = CLLocationManager()
     var enterHandler: (((Int?, Int?)) -> Void)?
     var exitHandler: (((Int?, Int?)) -> Void)?
+    var distance: Double?
+    var devices: [CLBeacon] = []
+    var estimoteBeacon: CLBeacon?
     
     
     override init() {
@@ -28,8 +32,6 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-
-        var devices: [CLBeacon] = []
         
         for beacon in beacons {
             if beacon.proximity == CLProximity.immediate {
@@ -40,11 +42,13 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        estimoteBeacon = devices.first!
         
-        let beaconRegion = CLBeaconRegion()
-        
-        if let handler = enterHandler {
-            handler((beaconRegion.major?.intValue, beaconRegion.minor?.intValue))
+        for beacon in devices {
+            if let estBeacon = estimoteBeacon, beacon.accuracy < estBeacon.accuracy {
+                estimoteBeacon = beacon
+                distance = beacon.accuracy
+            }
         }
     }
     

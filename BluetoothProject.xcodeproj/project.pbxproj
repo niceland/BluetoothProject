@@ -24,6 +24,8 @@
 		5A80258020CAC0C300D3C16F /* WeightedLinearAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257F20CAC0C300D3C16F /* WeightedLinearAverage.swift */; };
 		5A80258220CAC55000D3C16F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */; };
 		5A912EB520EF9B5C00E22DAE /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */; };
+		5A912EB720EFADCE00E22DAE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB620EFADCE00E22DAE /* MainViewController.swift */; };
+		5A912EB920EFAE7800E22DAE /* MeasurementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		5A80258320CAC59C00D3C16F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		5A912EB620EFADCE00E22DAE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 			children = (
 				5A80254020CA8C4200D3C16F /* AppDelegate.swift */,
 				5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */,
+				5A912EB620EFADCE00E22DAE /* MainViewController.swift */,
+				5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */,
 				5A80258320CAC59C00D3C16F /* ObjCBridge.h */,
 				5A38271C20E9750200E14FEE /* Beacons */,
 				5A80257C20CAAC2600D3C16F /* Algorithms */,
@@ -284,12 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A80257120CA966000D3C16F /* DoubleExtension.swift in Sources */,
+				5A912EB720EFADCE00E22DAE /* MainViewController.swift in Sources */,
 				5A80258020CAC0C300D3C16F /* WeightedLinearAverage.swift in Sources */,
 				5A80257320CA966000D3C16F /* Matrix.swift in Sources */,
 				5A80257920CA987700D3C16F /* ArithmeticAverage.swift in Sources */,
 				5A80254320CA8C4300D3C16F /* ViewController.swift in Sources */,
 				5A80257B20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift in Sources */,
 				5A80257E20CAAC7300D3C16F /* RSSIToDistance.swift in Sources */,
+				5A912EB920EFAE7800E22DAE /* MeasurementsManager.swift in Sources */,
 				5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */,
 				5A80257220CA966000D3C16F /* KalmanFilter.swift in Sources */,
 				5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */,
