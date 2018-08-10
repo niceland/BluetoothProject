@@ -18,11 +18,11 @@ internal enum LoggingEvent {
         let logString: String
         switch self {
         case .regionEntry:
-            logString = "\(Date()), entry"
+            logString = "\(Date()), entry,\n"
         case .regionExit:
-            logString = "\(Date()), exit"
+            logString = "\(Date()), exit,\n"
         case .distanceResult(let accuracy):
-            logString = "\(Date()), \(accuracy)"
+            logString = "\(Date()), \(accuracy),\n"
         }
         return logString.data(using: .utf8) ?? Data()
     }
