@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A29219F20F619CC0091F310 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29219E20F619CC0091F310 /* MainTableViewCell.swift */; };
+		385F3636211E14320046ED94 /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F3635211E14320046ED94 /* Bluetooth.swift */; };
+		385F3639211E16650046ED94 /* BeaconParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F3638211E16650046ED94 /* BeaconParameters.swift */; };
+		385F363C211E18C30046ED94 /* MeasurementsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F363B211E18C30046ED94 /* MeasurementsBaseViewController.swift */; };
+		385F363F211E26320046ED94 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F363E211E26320046ED94 /* Logger.swift */; };
+		385F3641211E26590046ED94 /* LoggingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F3640211E26590046ED94 /* LoggingEvent.swift */; };
+		385F3643211E267B0046ED94 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F3642211E267B0046ED94 /* ConsoleLogger.swift */; };
+		385F3645211E26840046ED94 /* CSVLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F3644211E26840046ED94 /* CSVLogger.swift */; };
+		385F3648211E33670046ED94 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F3647211E33670046ED94 /* Array.swift */; };
 		5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38271D20E9751B00E14FEE /* BeaconManager.swift */; };
 		5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80254020CA8C4200D3C16F /* AppDelegate.swift */; };
-		5A80254320CA8C4300D3C16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80254220CA8C4300D3C16F /* ViewController.swift */; };
-		5A80254620CA8C4300D3C16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A80254420CA8C4300D3C16F /* Main.storyboard */; };
 		5A80254820CA8C4500D3C16F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A80254720CA8C4500D3C16F /* Assets.xcassets */; };
 		5A80254B20CA8C4500D3C16F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A80254920CA8C4500D3C16F /* LaunchScreen.storyboard */; };
 		5A80255620CA8C4500D3C16F /* BluetoothProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80255520CA8C4500D3C16F /* BluetoothProjectTests.swift */; };
@@ -20,12 +25,9 @@
 		5A80257320CA966000D3C16F /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80256E20CA966000D3C16F /* Matrix.swift */; };
 		5A80257420CA966000D3C16F /* KalmanFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257020CA966000D3C16F /* KalmanFilterType.swift */; };
 		5A80257920CA987700D3C16F /* ArithmeticAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257820CA987700D3C16F /* ArithmeticAverage.swift */; };
-		5A80257B20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257A20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift */; };
 		5A80257E20CAAC7300D3C16F /* RSSIToDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */; };
 		5A80258020CAC0C300D3C16F /* WeightedLinearAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80257F20CAC0C300D3C16F /* WeightedLinearAverage.swift */; };
-		5A80258220CAC55000D3C16F /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */; };
 		5A912EB520EF9B5C00E22DAE /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */; };
-		5A912EB720EFADCE00E22DAE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB620EFADCE00E22DAE /* MainViewController.swift */; };
 		5A912EB920EFAE7800E22DAE /* MeasurementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,12 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A29219E20F619CC0091F310 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		385F3635211E14320046ED94 /* Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		385F3638211E16650046ED94 /* BeaconParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconParameters.swift; sourceTree = "<group>"; };
+		385F363B211E18C30046ED94 /* MeasurementsBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsBaseViewController.swift; sourceTree = "<group>"; };
+		385F363E211E26320046ED94 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		385F3640211E26590046ED94 /* LoggingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingEvent.swift; sourceTree = "<group>"; };
+		385F3642211E267B0046ED94 /* ConsoleLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLogger.swift; sourceTree = "<group>"; };
+		385F3644211E26840046ED94 /* CSVLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVLogger.swift; sourceTree = "<group>"; };
+		385F3647211E33670046ED94 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		5A38271D20E9751B00E14FEE /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		5A80253D20CA8C4200D3C16F /* BluetoothProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A80254020CA8C4200D3C16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A80254220CA8C4300D3C16F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A80254520CA8C4300D3C16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A80254720CA8C4500D3C16F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A80254A20CA8C4500D3C16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A80254C20CA8C4500D3C16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,13 +65,9 @@
 		5A80256F20CA966000D3C16F /* KalmanFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalmanFilter.h; sourceTree = "<group>"; };
 		5A80257020CA966000D3C16F /* KalmanFilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KalmanFilterType.swift; sourceTree = "<group>"; };
 		5A80257820CA987700D3C16F /* ArithmeticAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticAverage.swift; sourceTree = "<group>"; };
-		5A80257A20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedLogarithmicAverage.swift; sourceTree = "<group>"; };
 		5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSIToDistance.swift; sourceTree = "<group>"; };
 		5A80257F20CAC0C300D3C16F /* WeightedLinearAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedLinearAverage.swift; sourceTree = "<group>"; };
-		5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
-		5A80258320CAC59C00D3C16F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
-		5A912EB620EFADCE00E22DAE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A80258220CAC55000D3C16F /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,13 +89,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A38271C20E9750200E14FEE /* Beacons */ = {
+		385F3637211E15CF0046ED94 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				5A38271D20E9751B00E14FEE /* BeaconManager.swift */,
+				385F3635211E14320046ED94 /* Bluetooth.swift */,
 				5A912EB420EF9B5C00E22DAE /* BluetoothManager.swift */,
+				5A38271D20E9751B00E14FEE /* BeaconManager.swift */,
+				385F3638211E16650046ED94 /* BeaconParameters.swift */,
 			);
-			path = Beacons;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		385F363A211E18AA0046ED94 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				385F363B211E18C30046ED94 /* MeasurementsBaseViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		385F363D211E25A40046ED94 /* Loggers */ = {
+			isa = PBXGroup;
+			children = (
+				385F363E211E26320046ED94 /* Logger.swift */,
+				385F3642211E267B0046ED94 /* ConsoleLogger.swift */,
+				385F3644211E26840046ED94 /* CSVLogger.swift */,
+				385F3640211E26590046ED94 /* LoggingEvent.swift */,
+			);
+			path = Loggers;
+			sourceTree = "<group>";
+		};
+		385F3646211E33590046ED94 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				385F3647211E33670046ED94 /* Array.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A38271C20E9750200E14FEE /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */,
+				385F3637211E15CF0046ED94 /* Core */,
+			);
+			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 		5A80253420CA8C4200D3C16F = {
@@ -102,7 +142,6 @@
 				5A80253F20CA8C4200D3C16F /* BluetoothProject */,
 				5A80255420CA8C4500D3C16F /* BluetoothProjectTests */,
 				5A80253E20CA8C4200D3C16F /* Products */,
-				5A80258120CAC54F00D3C16F /* EstimoteSDK.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,15 +158,11 @@
 			isa = PBXGroup;
 			children = (
 				5A80254020CA8C4200D3C16F /* AppDelegate.swift */,
-				5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */,
-				5A912EB620EFADCE00E22DAE /* MainViewController.swift */,
-				5A29219E20F619CC0091F310 /* MainTableViewCell.swift */,
-				5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */,
-				5A80258320CAC59C00D3C16F /* ObjCBridge.h */,
-				5A38271C20E9750200E14FEE /* Beacons */,
+				385F363A211E18AA0046ED94 /* View Controllers */,
+				385F3646211E33590046ED94 /* Extension */,
+				385F363D211E25A40046ED94 /* Loggers */,
+				5A38271C20E9750200E14FEE /* Bluetooth */,
 				5A80257C20CAAC2600D3C16F /* Algorithms */,
-				5A80254220CA8C4300D3C16F /* ViewController.swift */,
-				5A80254420CA8C4300D3C16F /* Main.storyboard */,
 				5A80254720CA8C4500D3C16F /* Assets.xcassets */,
 				5A80254920CA8C4500D3C16F /* LaunchScreen.storyboard */,
 				5A80254C20CA8C4500D3C16F /* Info.plist */,
@@ -147,8 +182,8 @@
 		5A80256220CA962A00D3C16F /* KalmanFilter */ = {
 			isa = PBXGroup;
 			children = (
-				5A80256C20CA965F00D3C16F /* DoubleExtension.swift */,
 				5A80256F20CA966000D3C16F /* KalmanFilter.h */,
+				5A80256C20CA965F00D3C16F /* DoubleExtension.swift */,
 				5A80256D20CA966000D3C16F /* KalmanFilter.swift */,
 				5A80257020CA966000D3C16F /* KalmanFilterType.swift */,
 				5A80256E20CA966000D3C16F /* Matrix.swift */,
@@ -164,14 +199,6 @@
 			path = WeightedLinearAverage;
 			sourceTree = "<group>";
 		};
-		5A80257620CA971E00D3C16F /* WeightedLogarithmicAverage */ = {
-			isa = PBXGroup;
-			children = (
-				5A80257A20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift */,
-			);
-			path = WeightedLogarithmicAverage;
-			sourceTree = "<group>";
-		};
 		5A80257720CA976800D3C16F /* ArithmeticAverage */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,10 +210,10 @@
 		5A80257C20CAAC2600D3C16F /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */,
 				5A80256220CA962A00D3C16F /* KalmanFilter */,
 				5A80257720CA976800D3C16F /* ArithmeticAverage */,
 				5A80257520CA96EC00D3C16F /* WeightedLinearAverage */,
-				5A80257620CA971E00D3C16F /* WeightedLogarithmicAverage */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -274,7 +301,6 @@
 			files = (
 				5A80254B20CA8C4500D3C16F /* LaunchScreen.storyboard in Resources */,
 				5A80254820CA8C4500D3C16F /* Assets.xcassets in Resources */,
-				5A80254620CA8C4300D3C16F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,18 +319,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A80257120CA966000D3C16F /* DoubleExtension.swift in Sources */,
-				5A912EB720EFADCE00E22DAE /* MainViewController.swift in Sources */,
+				385F3643211E267B0046ED94 /* ConsoleLogger.swift in Sources */,
 				5A80258020CAC0C300D3C16F /* WeightedLinearAverage.swift in Sources */,
 				5A80257320CA966000D3C16F /* Matrix.swift in Sources */,
-				5A29219F20F619CC0091F310 /* MainTableViewCell.swift in Sources */,
+				385F3645211E26840046ED94 /* CSVLogger.swift in Sources */,
 				5A80257920CA987700D3C16F /* ArithmeticAverage.swift in Sources */,
-				5A80254320CA8C4300D3C16F /* ViewController.swift in Sources */,
-				5A80257B20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift in Sources */,
+				385F3636211E14320046ED94 /* Bluetooth.swift in Sources */,
 				5A80257E20CAAC7300D3C16F /* RSSIToDistance.swift in Sources */,
+				385F3641211E26590046ED94 /* LoggingEvent.swift in Sources */,
+				385F3648211E33670046ED94 /* Array.swift in Sources */,
 				5A912EB920EFAE7800E22DAE /* MeasurementsManager.swift in Sources */,
 				5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */,
+				385F363C211E18C30046ED94 /* MeasurementsBaseViewController.swift in Sources */,
 				5A80257220CA966000D3C16F /* KalmanFilter.swift in Sources */,
+				385F363F211E26320046ED94 /* Logger.swift in Sources */,
 				5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */,
+				385F3639211E16650046ED94 /* BeaconParameters.swift in Sources */,
 				5A912EB520EF9B5C00E22DAE /* BluetoothManager.swift in Sources */,
 				5A80257420CA966000D3C16F /* KalmanFilterType.swift in Sources */,
 			);
@@ -329,14 +359,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A80254420CA8C4300D3C16F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A80254520CA8C4300D3C16F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A80254920CA8C4500D3C16F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -479,7 +501,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mpamula.BluetoothProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -502,7 +524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mpamula.BluetoothProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -9,22 +9,15 @@
 import Foundation
 import UIKit
 
-class ArithmeticAverage {
+internal final class ArithmeticAverage {
     
-    func arithmeticAverageOf(measurements: [CGFloat]) -> CGFloat {
-        
+    static func arithmeticAverageOf(measurements: [Double]) -> Double {
         let measurementsTotal = measurements.count
-        
-        if measurementsTotal == 0 {
-            return 0
-        }
-        
-        var sum: CGFloat = 0
-        
+        guard measurementsTotal != 0 else { return 0 }
+        var sum: Double = 0
         for measurement in measurements {
             sum += measurement
         }
-        
-        return sum/CGFloat(measurementsTotal)
+        return sum/Double(measurementsTotal)
     }
 }
