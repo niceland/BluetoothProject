@@ -20,7 +20,7 @@ class BluetoothManager: NSObject, Bluetooth {
         case inRange, outRange
     }
  
-    private lazy var centralManager: CBCentralManager = CBCentralManager(delegate: self, queue: nil)
+    private var centralManager: CBCentralManager?
     
     private var kalmanFilter = KalmanFilter<Double>(stateEstimatePrior: 0.0, errorCovariancePrior: 1)
     
@@ -61,7 +61,7 @@ class BluetoothManager: NSObject, Bluetooth {
     }
     
     func startObservation() {
-        centralManager.scanForPeripherals(withServices: nil, options: nil)
+        centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
     func observeExit(_ handler: @escaping () -> ()) {
@@ -82,7 +82,7 @@ extension BluetoothManager: CBCentralManagerDelegate, CBPeripheralDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
         case .poweredOn:
-            centralManager.scanForPeripherals(withServices: nil)
+            central.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
         default:
             print("Initialiation of Bluetooth failed.")
         }
@@ -90,18 +90,14 @@ extension BluetoothManager: CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if peripheral.name == expectedDeviceName {
-            currentState = .inRange
+            if currentState != .inRange {
+                currentState = .inRange
+            }
             exitScheduleTimer?.invalidate()
             exitScheduleTimer = nil
             exitScheduleTimer = Timer(timeInterval: exitTimeThreshold, target: self, selector: #selector(scheduleExit), userInfo: nil, repeats: false)
-            peripheral.delegate = self
-            peripheral.readRSSI()
+            handleRSSICalculation(rssi: peripheral.rssi?.intValue ?? 0)
         }
-    }
-    
-    func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
-        guard error == nil else { return }
-        handleRSSICalculation(rssi: RSSI.intValue)
     }
     
     @objc private func scheduleExit() {

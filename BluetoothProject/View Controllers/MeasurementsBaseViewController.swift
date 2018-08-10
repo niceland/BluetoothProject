@@ -35,6 +35,9 @@ internal final class MeasurementsBaseViewController: UIViewController {
         return button
     }()
     
+    private var beaconMeasurements: MeasurementsManager?
+    private var bluetoothMeasurements: MeasurementsManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(stackView)
@@ -73,6 +76,12 @@ internal final class MeasurementsBaseViewController: UIViewController {
     
     private func startMeasurements(type: MeasurementType, logger: Logger) {
         let measurements = MeasurementsManager(type: type, logger: logger)
+        switch type {
+        case .byBeacon:
+            beaconMeasurements = measurements
+        case .byBluetooth:
+            bluetoothMeasurements = measurements
+        }
         measurements.startMeasurements()
     }
     
