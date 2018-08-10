@@ -96,7 +96,7 @@ extension BluetoothManager: CBCentralManagerDelegate, CBPeripheralDelegate {
             exitScheduleTimer?.invalidate()
             exitScheduleTimer = nil
             exitScheduleTimer = Timer(timeInterval: exitTimeThreshold, target: self, selector: #selector(scheduleExit), userInfo: nil, repeats: false)
-            handleRSSICalculation(rssi: peripheral.rssi?.intValue ?? 0)
+            handleRSSICalculation(rssi: RSSI.intValue)
         }
     }
     
@@ -108,7 +108,7 @@ extension BluetoothManager: CBCentralManagerDelegate, CBPeripheralDelegate {
 extension BluetoothManager {
     
     private func handleRSSICalculation(rssi: Int) {
-        let distance = RSSIToDistance.calculateDistance(rssi: rssi, txPower: 1)
+        let distance = RSSIToDistance.calculateDistance(rssi: rssi, txPower: 60)
         distanceMeasurementsHistory.append(distance)
         guard
             distanceMeasurementsHistory.count > 4,
