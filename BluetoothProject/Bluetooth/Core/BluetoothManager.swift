@@ -121,19 +121,21 @@ extension BluetoothManager {
         else {
             return
         }
+        let average: Double
         switch distanceFilteringMethod {
         case .arithmeticAverage:
-            let average = ArithmeticAverage.arithmeticAverageOf(measurements: Array(distanceMeasurementsHistory.suffix(4)))
-            distanceHandler?(CLLocationAccuracy(average))
+            average = ArithmeticAverage.arithmeticAverageOf(measurements: Array(distanceMeasurementsHistory.suffix(4)))
         case .weightedLinearAverage:
-            let average = WeightedLinearAverage.simpleMovingAverage(first: last, second: oneToLast, lambda: 0.8)
-            distanceHandler?(CLLocationAccuracy(average))
+            average = WeightedLinearAverage.simpleMovingAverage(first: last, second: oneToLast, lambda: 0.8)
         case .kalmanFilter:
             _ = kalmanFilter.predict(stateTransitionModel: 1, controlInputModel: 0, controlVector: 0, covarianceOfProcessNoise: 0)
             let update = kalmanFilter.update(measurement: last, observationModel: 1, covarienceOfObservationNoise: 0.1)
             kalmanFilter = update
-            let average = kalmanFilter.stateEstimatePrior
-            distanceHandler?(CLLocationAccuracy(average))
+            average = kalmanFilter.stateEstimatePrior
+        }
+        distanceHandler?(CLLocationAccuracy(average))
+        if average > distanceThreshold && currentState != .outRange {
+            currentState = .outRange
         }
     }
 }
