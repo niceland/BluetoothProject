@@ -64,6 +64,10 @@ class BluetoothManager: NSObject, Bluetooth {
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
+    func stopObservation() {
+        centralManager?.stopScan()
+    }
+    
     func observeExit(_ handler: @escaping () -> ()) {
         exitHandler = handler
     }

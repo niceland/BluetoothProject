@@ -23,7 +23,7 @@ internal class CSVLogger: Logger {
         }
     }
     
-    private var fileURL: URL? {
+    internal var fileURL: URL? {
         let fileManager = FileManager.default
         let path = try? fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
         return path?.appendingPathComponent(fileType.filename)

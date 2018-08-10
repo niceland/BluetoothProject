@@ -33,8 +33,13 @@ class BeaconManager: NSObject, Bluetooth {
     func startObservation() {
         guard let uuid = UUID(uuidString: self.uuid) else { return }
         let region = CLBeaconRegion(proximityUUID: uuid, major: UInt16(expectedParameters.major), minor: UInt16(expectedParameters.minor), identifier: "estimote")
-        self.locationManager.startMonitoring(for: region)
-        self.locationManager.startRangingBeacons(in: region)
+        locationManager.startMonitoring(for: region)
+        locationManager.startRangingBeacons(in: region)
+    }
+    
+    func stopObservation() {
+        guard let region = locationManager.monitoredRegions.first else { return }
+        locationManager.stopMonitoring(for: region)
     }
     
     func observeExit(_ handler: @escaping () -> ()) {

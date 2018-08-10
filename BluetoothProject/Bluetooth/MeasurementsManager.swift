@@ -41,6 +41,12 @@ internal final class MeasurementsManager {
         }
     }
     
+    internal func stop() -> URL? {
+        bluetoothManager.stopObservation()
+        guard let logger = logger as? CSVLogger, let url = logger.fileURL else { return nil }
+        return URL(fileURLWithPath: url.path)
+    }
+    
     private func handleEvent(event: LoggingEvent) {
         logger.log(event: event)
     }

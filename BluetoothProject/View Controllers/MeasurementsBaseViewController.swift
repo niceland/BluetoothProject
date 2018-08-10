@@ -18,6 +18,7 @@ internal final class MeasurementsBaseViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.addArrangedSubview(bluetoothMonitoringButton)
         stackView.addArrangedSubview(beaconMonitoringButton)
+        stackView.addArrangedSubview(stopMonitoringButton)
         return stackView
     }()
     
@@ -35,6 +36,14 @@ internal final class MeasurementsBaseViewController: UIViewController {
         return button
     }()
     
+    private var stopMonitoringButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Stop monitoring", for: .normal)
+        button.isHidden = true
+        return button
+    }()
+    
     private var beaconMeasurements: MeasurementsManager?
     private var bluetoothMeasurements: MeasurementsManager?
     
@@ -46,6 +55,7 @@ internal final class MeasurementsBaseViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
         bluetoothMonitoringButton.addTarget(self, action: #selector(startBluetoothMonitoring), for: .touchUpInside)
         beaconMonitoringButton.addTarget(self, action: #selector(startBeaconMonitoring), for: .touchUpInside)
+        stopMonitoringButton.addTarget(self, action: #selector(stopMonitoring), for: .touchUpInside)
     }
     
     @objc private func startBluetoothMonitoring() {
@@ -75,6 +85,7 @@ internal final class MeasurementsBaseViewController: UIViewController {
     }
     
     private func startMeasurements(type: MeasurementType, logger: Logger) {
+        stopMonitoringButton.isHidden = false
         let measurements = MeasurementsManager(type: type, logger: logger)
         switch type {
         case .byBeacon:
@@ -94,5 +105,18 @@ internal final class MeasurementsBaseViewController: UIViewController {
             alertController.addAction(action)
         }
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc private func stopMonitoring() {
+        stopMonitoringButton.isHidden = true
+        var contents = [Any]()
+        if let beaconData = beaconMeasurements?.stop() {
+            contents.append(beaconData)
+        }
+        if let bluetoothData = bluetoothMeasurements?.stop() {
+            contents.append(bluetoothData)
+        }
+        let activityController = UIActivityViewController(activityItems: contents, applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
     }
 }

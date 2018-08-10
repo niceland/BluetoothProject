@@ -13,6 +13,8 @@ internal protocol Bluetooth {
     
     func startObservation()
     
+    func stopObservation()
+    
     func observeEntry(_ handler: @escaping () -> ())
     
     func observeExit(_ handler: @escaping () -> ())
