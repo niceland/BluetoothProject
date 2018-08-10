@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A29219F20F619CC0091F310 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29219E20F619CC0091F310 /* MainTableViewCell.swift */; };
 		5A38271E20E9751B00E14FEE /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38271D20E9751B00E14FEE /* BeaconManager.swift */; };
 		5A80254120CA8C4200D3C16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80254020CA8C4200D3C16F /* AppDelegate.swift */; };
 		5A80254320CA8C4300D3C16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80254220CA8C4300D3C16F /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A29219E20F619CC0091F310 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		5A38271D20E9751B00E14FEE /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		5A80253D20CA8C4200D3C16F /* BluetoothProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A80254020CA8C4200D3C16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				5A80254020CA8C4200D3C16F /* AppDelegate.swift */,
 				5A80257D20CAAC7300D3C16F /* RSSIToDistance.swift */,
 				5A912EB620EFADCE00E22DAE /* MainViewController.swift */,
+				5A29219E20F619CC0091F310 /* MainTableViewCell.swift */,
 				5A912EB820EFAE7700E22DAE /* MeasurementsManager.swift */,
 				5A80258320CAC59C00D3C16F /* ObjCBridge.h */,
 				5A38271C20E9750200E14FEE /* Beacons */,
@@ -293,6 +296,7 @@
 				5A912EB720EFADCE00E22DAE /* MainViewController.swift in Sources */,
 				5A80258020CAC0C300D3C16F /* WeightedLinearAverage.swift in Sources */,
 				5A80257320CA966000D3C16F /* Matrix.swift in Sources */,
+				5A29219F20F619CC0091F310 /* MainTableViewCell.swift in Sources */,
 				5A80257920CA987700D3C16F /* ArithmeticAverage.swift in Sources */,
 				5A80254320CA8C4300D3C16F /* ViewController.swift in Sources */,
 				5A80257B20CAAB1F00D3C16F /* WeightedLogarithmicAverage.swift in Sources */,

@@ -13,15 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
 
     var window: UIWindow?
 
-    let beaconManager = BeaconManager()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UIApplication.shared.registerUserNotificationSettings(
             UIUserNotificationSettings(types: .alert, categories: nil))
         
-        beaconManager.startSearchingForDeviceWithUUID(uuid: UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!)
-        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = MainViewController()
+        window?.makeKeyAndVisible()
+                
         return true
     }
 

@@ -11,6 +11,10 @@ import UIKit
 
 class WeightedLinearAverage {
     
+    func simpleMovingAverage(first: CGFloat, second: CGFloat, lambda: CGFloat) -> CGFloat {
+        return (lambda * second + (1 - lambda) * first) / 3
+    }
+    
     //srednia wazona
     
     func weightedArithemticAverage(measurements: [CGFloat]) -> CGFloat {

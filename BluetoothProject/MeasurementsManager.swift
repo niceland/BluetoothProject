@@ -12,13 +12,15 @@ import CoreLocation
 
 protocol MeasurementsDelegate {
     var distance: Double? { get }
+    func didEnter()
+    func didExit()
 }
 
 class MeasurementsManager: NSObject {
     
     var distance: Double?
     
-    init(manager: NSObject) {
+    init(manager: MeasurementsDelegate) {
         super.init()
     }
 }
