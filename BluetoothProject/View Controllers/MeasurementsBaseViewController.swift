@@ -59,7 +59,7 @@ internal final class MeasurementsBaseViewController: UIViewController {
     }
     
     @objc private func startBluetoothMonitoring() {
-        let type = MeasurementType.byBluetooth(deviceName: "estimote", distanceThreshold: 10, exitTimeThreshold: 5, filteringMethod: .weightedLinearAverage)
+        let type = MeasurementType.byBluetooth(deviceName: "estimote", distanceThreshold: 10, exitTimeThreshold: 5, filteringMethod: .kalmanFilter)
         let consoleLogHandler = {
             let logger = ConsoleLogger()
             self.startMeasurements(type: type, logger: logger)

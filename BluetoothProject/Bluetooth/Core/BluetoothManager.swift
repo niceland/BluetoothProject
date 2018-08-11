@@ -94,9 +94,6 @@ extension BluetoothManager: CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if peripheral.name == expectedDeviceName {
-            if currentState != .inRange {
-                currentState = .inRange
-            }
             exitScheduleTimer?.invalidate()
             exitScheduleTimer = nil
             exitScheduleTimer = Timer(timeInterval: exitTimeThreshold, target: self, selector: #selector(scheduleExit), userInfo: nil, repeats: false)
@@ -128,14 +125,15 @@ extension BluetoothManager {
         case .weightedLinearAverage:
             average = WeightedLinearAverage.simpleMovingAverage(first: last, second: oneToLast, lambda: 0.8)
         case .kalmanFilter:
-            _ = kalmanFilter.predict(stateTransitionModel: 1, controlInputModel: 0, controlVector: 0, covarianceOfProcessNoise: 0)
-            let update = kalmanFilter.update(measurement: last, observationModel: 1, covarienceOfObservationNoise: 0.1)
-            kalmanFilter = update
+            let prediction = kalmanFilter.predict(stateTransitionModel: 1, controlInputModel: 0, controlVector: 0, covarianceOfProcessNoise: 0.8)
+            kalmanFilter = prediction.update(measurement: last, observationModel: 1, covarienceOfObservationNoise: 0.1)
             average = kalmanFilter.stateEstimatePrior
         }
-        distanceHandler?(CLLocationAccuracy(average))
-        if average > distanceThreshold && currentState != .outRange {
+        if average > Double(distanceThreshold) && currentState != .outRange {
             currentState = .outRange
+        } else if currentState != .inRange {
+            currentState = .inRange
         }
+        distanceHandler?(CLLocationAccuracy(average))
     }
 }
