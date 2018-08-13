@@ -117,6 +117,8 @@ internal final class MeasurementsBaseViewController: UIViewController {
             contents.append(bluetoothData)
         }
         let activityController = UIActivityViewController(activityItems: contents, applicationActivities: nil)
-        present(activityController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+        self.present(activityController, animated: true, completion: nil)
+        }
     }
 }
