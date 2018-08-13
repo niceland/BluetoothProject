@@ -37,7 +37,7 @@ internal class CSVLogger: Logger {
     }
     
     func log(event: LoggingEvent) {
-        guard let url = fileURL, let handle = FileHandle(forReadingAtPath: url.path) else { return }
+        guard let url = fileURL, let handle = FileHandle(forWritingAtPath: url.path) else { return }
         handle.seekToEndOfFile()
         handle.write(event.logData)
         handle.closeFile()
@@ -49,6 +49,6 @@ internal class CSVLogger: Logger {
         if override {
             try? fileManager.removeItem(at: url)
         }
-        fileManager.createFile(atPath: url.absoluteString, contents: nil, attributes: nil)
+        fileManager.createFile(atPath: url.path, contents: nil, attributes: nil)
     }
 }
